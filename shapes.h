@@ -46,4 +46,20 @@ public:
     }
 };
 
+// Shape Factory
+class ShapeFactory
+{
+public:
+    static Shape *createShape(const char *type, double a, double b = 0)
+    {
+        if (strcmp(type, "circle") == 0)
+            return new Circle(a);
+        if (strcmp(type, "square") == 0)
+            return new Square(a);
+        if (strcmp(type, "rectangle") == 0)
+            return new Rectangle(a, b);
+        return nullptr;
+    }
+};
+
 #endif
